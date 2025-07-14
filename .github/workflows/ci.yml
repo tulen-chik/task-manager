@@ -27,9 +27,3 @@ jobs:
 
       - name: Run unit tests
         run: npm test
-
-      - name: Build Android (optional)
-        if: ${{ always() }}
-        run: |
-          cd android
-          ./gradlew assembleDebug
