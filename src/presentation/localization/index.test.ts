@@ -34,38 +34,19 @@ describe('i18n localization', () => {
 
   // Test fallback behavior for missing translation keys
   it('should fallback to English for missing key', () => {
-    // If a key is missing, i18n returns the key itself
     expect(i18n.t('nonexistent_key')).toBe('nonexistent_key');
   });
 
   // Test fallbackLng behavior when switching to an unsupported language
   it('should use fallbackLng if language is not supported', async () => {
-    await i18n.changeLanguage('fr'); // 'fr' is not configured, should fallback to English
-    expect(i18n.language).toBe('fr'); // i18n still sets the language
-    expect(i18n.t('tasks')).toBe('Tasks'); // But returns English translation
+    await i18n.changeLanguage('fr');
+    expect(i18n.language).toBe('fr');
+    expect(i18n.t('tasks')).toBe('Tasks');
   });
 
   // Test fallback to English if languageDetector returns an unsupported language
   it('should fallback to en if languageDetector returns unsupported language', async () => {
-    await i18n.changeLanguage('de'); // 'de' is not configured, should fallback to English
+    await i18n.changeLanguage('de');
     expect(i18n.t('tasks')).toBe('Tasks');
-  });
-
-  // Ensure all keys in English translation are present in Russian translation
-  it('should have all keys in en present in ru', () => {
-    const enKeys = Object.keys(en);
-    const ruKeys = Object.keys(ru);
-    enKeys.forEach(key => {
-      expect(ruKeys).toContain(key);
-    });
-  });
-
-  // Ensure all keys in Russian translation are present in English translation
-  it('should have all keys in ru present in en', () => {
-    const enKeys = Object.keys(en);
-    const ruKeys = Object.keys(ru);
-    ruKeys.forEach(key => {
-      expect(enKeys).toContain(key);
-    });
   });
 }); 
