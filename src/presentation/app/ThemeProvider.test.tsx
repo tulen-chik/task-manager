@@ -22,7 +22,6 @@ describe('ThemeProvider', () => {
 
   // Test that nested ThemeProviders do not break context
   it('allows nested ThemeProviders', () => {
-    const customTheme = { ...theme, colors: { ...theme.colors, primary: '#000000' } };
     const CustomThemeProvider = ({ children }: { children: React.ReactNode }) => (
       <ThemeProvider>
         <ThemeProvider>{children}</ThemeProvider>
