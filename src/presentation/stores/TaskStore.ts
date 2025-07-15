@@ -150,4 +150,13 @@ export class TaskStore {
     this.filterDate = null;
     this.loadTasks();
   }
+
+  /**
+   * Gets a task by its id.
+   * @param id - The id of the task to get.
+   * @returns The task with the given id, or undefined if not found.
+   */
+  getTaskById(id: string) {
+    return this.tasks.find(task => task.id === id);
+  }
 } 

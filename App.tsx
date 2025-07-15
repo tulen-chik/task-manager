@@ -1,28 +1,25 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { TaskStoreProvider } from './src/presentation/stores/TaskStoreContext';
+import { TaskStore } from './src/presentation/stores/TaskStore';
+import TaskListScreen from './src/presentation/screens/TaskListScreen';
+import TaskFormScreen from './src/presentation/screens/TaskFormScreen';
+import TaskDetailScreen from './src/presentation/screens/TaskDetailScreen';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+const Stack = createStackNavigator();
+const taskStore = new TaskStore();
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+const App = () => (
+  <TaskStoreProvider store={taskStore}>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="TaskList" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="TaskList" component={TaskListScreen} />
+        <Stack.Screen name="TaskForm" component={TaskFormScreen} />
+        <Stack.Screen name="TaskDetail" component={TaskDetailScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  </TaskStoreProvider>
+);
 
 export default App;

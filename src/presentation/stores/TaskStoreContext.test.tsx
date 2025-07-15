@@ -2,13 +2,14 @@ import React from 'react';
 import { render, screen } from '@testing-library/react-native';
 import { TaskStoreProvider, useTaskStore } from './TaskStoreContext';
 import { TaskStore } from './TaskStore';
+import { Text } from 'react-native';
 
 jest.mock('react-native-sqlite-storage');
 
 // Helper component to test access to the store via the context
 const TestComponent = () => {
   const store = useTaskStore();
-  return <>{store ? 'Store is available' : 'No store'}</>;
+  return <Text>{store ? 'Store is available' : 'No store'}</Text>;
 };
 
 describe('TaskStoreContext', () => {
