@@ -1,0 +1,23 @@
+{
+    "tasks": "Задачи",
+    "add_task": "Добавить задачу",
+    "edit_task": "Редактировать задачу",
+    "delete_task": "Удалить задачу",
+    "task_title": "Название",
+    "task_description": "Описание",
+    "task_date": "Дата и время",
+    "task_location": "Место",
+    "task_status": "Статус",
+    "status_in_progress": "В процессе",
+    "status_completed": "Завершено",
+    "status_cancelled": "Отменено",
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "no_tasks": "Нет задач",
+    "no_tasks_found": "Нет задач",
+    "no_tasks_found_description": "Нет задач",
+    "no_tasks_found_description_2": "Нет задач",
+    "no_tasks_found_description_3": "Нет задач"
+  }

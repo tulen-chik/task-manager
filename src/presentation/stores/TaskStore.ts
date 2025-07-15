@@ -1,6 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { Task, TaskStatus } from '../../entities/Task';
 import { TaskDataSource } from '../../data/TaskDataSource';
+import i18n from '../localization';
 
 /**
  * TaskStore
@@ -42,7 +43,7 @@ export class TaskStore {
       });
     } catch (e: any) {
       runInAction(() => {
-        this.error = e.message || 'Failed to load tasks';
+        this.error = e.message || i18n.t('error');
         this.loading = false;
       });
     }
@@ -60,7 +61,7 @@ export class TaskStore {
       await this.loadTasks();
     } catch (e: any) {
       runInAction(() => {
-        this.error = e.message || 'Failed to add task';
+        this.error = e.message || i18n.t('error');
         this.loading = false;
       });
     }
@@ -78,7 +79,7 @@ export class TaskStore {
       await this.loadTasks();
     } catch (e: any) {
       runInAction(() => {
-        this.error = e.message || 'Failed to update task';
+        this.error = e.message || i18n.t('error');
         this.loading = false;
       });
     }
@@ -97,7 +98,7 @@ export class TaskStore {
       await this.loadTasks();
     } catch (e: any) {
       runInAction(() => {
-        this.error = e.message || 'Failed to update task status';
+        this.error = e.message || i18n.t('error');
         this.loading = false;
       });
     }
@@ -115,7 +116,7 @@ export class TaskStore {
       await this.loadTasks();
     } catch (e: any) {
       runInAction(() => {
-        this.error = e.message || 'Failed to delete task';
+        this.error = e.message || i18n.t('error');
         this.loading = false;
       });
     }

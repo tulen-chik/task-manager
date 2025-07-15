@@ -1,0 +1,16 @@
+{
+    "tasks": "Tasks",
+    "add_task": "Add Task",
+    "edit_task": "Edit Task",
+    "delete_task": "Delete Task",
+    "task_title": "Title",
+    "task_description": "Description",
+    "task_date": "Date and Time",
+    "task_location": "Location",
+    "task_status": "Status",
+    "status_in_progress": "In Progress",
+    "status_completed": "Completed",
+    "status_cancelled": "Cancelled",
+    "save": "Save",
+    "cancel": "Cancel"
+  }
