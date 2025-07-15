@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import AppHeader from '../components/AppHeader';
 import TaskForm from '../components/TaskForm';
 import { useTaskStore } from '../stores/TaskStoreContext';
@@ -11,7 +11,7 @@ const TaskFormScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const store = useTaskStore();
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       <AppHeader title="Add Task" />
       <TaskForm
         onSubmit={async (task) => {
@@ -31,5 +31,9 @@ const TaskFormScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+});
 
 export default TaskFormScreen;

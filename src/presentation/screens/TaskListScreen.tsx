@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import AppHeader from '../components/AppHeader';
 import TaskList from '../components/TaskList';
 import PrimaryButton from '../components/PrimaryButton';
@@ -16,7 +16,7 @@ const TaskListScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   }, [store]);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       <AppHeader title="Tasks" />
       <TaskList
         tasks={store.tasks}
@@ -25,10 +25,15 @@ const TaskListScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       <PrimaryButton
         title="Add Task"
         onPress={() => navigation.navigate('TaskForm')}
-        style={{ position: 'absolute', bottom: 24, right: 24, left: 24 }}
+        style={styles.addButton}
       />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+  addButton: { position: 'absolute', bottom: 24, right: 24, left: 24 },
+});
 
 export default TaskListScreen;

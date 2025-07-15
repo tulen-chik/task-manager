@@ -1,6 +1,4 @@
 import i18n from './index'; // Import the i18n instance configured for the app
-import en from './en.json'; // Import English translations as a plain object
-import ru from './ru.json'; // Import Russian translations as a plain object
 
 // Group all i18n localization tests in a single describe block
 describe('i18n localization', () => {

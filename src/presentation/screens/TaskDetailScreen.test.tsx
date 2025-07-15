@@ -4,7 +4,6 @@ import TaskDetailScreen from '../screens/TaskDetailScreen';
 import { TaskStoreProvider } from '../stores/TaskStoreContext';
 import { TaskStore } from '../stores/TaskStore';
 import { Task } from '../../entities/Task';
-import { Text } from 'react-native';
 
 jest.mock('react-native-sqlite-storage');
 

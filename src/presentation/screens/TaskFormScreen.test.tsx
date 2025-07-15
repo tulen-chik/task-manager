@@ -21,7 +21,7 @@ describe('TaskFormScreen', () => {
     const navigation = { goBack: jest.fn() };
     const store = new TaskStore();
     store.addTask = jest.fn().mockResolvedValue(undefined);
-    const { getByText, getByTestId } = render(
+    const { getByTestId } = render(
       <TaskStoreProvider store={store}>
         <TaskFormScreen navigation={navigation} />
       </TaskStoreProvider>
